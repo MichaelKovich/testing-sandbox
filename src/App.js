@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 
-import "./App.css";
+import './App.css';
 
-import List from "./components/List";
+import List from './components/List';
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class App extends Component {
         //   title: "Teach Cypress Testing Suite",
         //   isComplete: false
         // }
-      ]
+      ],
     };
   }
   render() {
