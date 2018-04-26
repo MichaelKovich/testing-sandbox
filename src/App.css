@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  height: 100px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.error {
+  min-height: 50px;
+  font-size: 2rem;
+  width: 20vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+.new_todo {
+  padding: 0px;
+  position: relative;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.87);
+  cursor: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  font-stretch: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  opacity: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  height: 100%;
+  width: 60%;
+  margin-bottom: 40px;
+}
