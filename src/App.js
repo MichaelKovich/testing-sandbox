@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       error: false,
+      inputText: '',
       todos: [
         // {
         //   id: 1,
@@ -18,6 +19,9 @@ class App extends Component {
         // }
       ],
     };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -27,12 +31,34 @@ class App extends Component {
       .catch(err => this.setState({error: true}));
   }
 
+  handleInputChange(e) {
+    this.setState({inputText: e.target.value});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    axios
+      .post('/api/todos', {
+        title: this.state.inputText,
+        isComplete: false,
+      })
+      .then(response => this.setState({inputText: ''}));
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header" />
         {this.state.error && <span className="error">Error!</span>}
-        <input className="new_todo" placeholder="Add new Todo" />
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <input
+            className="new_todo"
+            placeholder="Add new Todo"
+            value={this.state.inputText}
+            autoFocus
+            onChange={e => this.handleInputChange(e)}
+          />
+        </form>
         <List todos={this.state.todos} />
       </div>
     );
